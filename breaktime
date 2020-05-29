@@ -27,7 +27,7 @@ startbacktime=$((`date -j -f "%Y-%m-%d %H:%M:%S" "$datetoday $1:00" +"%s"`))
 # Determine the time until start back 
 timeleft=$(($startbacktime - `date +%s`))
 runonce=0
-estart=`date -j -f "%s" $startbacktime +"%T %Z"`
+estart=`env TZ=EST5EDT date -j -f "%s" $startbacktime +"%T %Z"`
 cstart=`env TZ=CST6CDT date -j -f "%s" $startbacktime +"%T %Z"`
 mstart=`env TZ=MST7MDT date -j -f "%s" $startbacktime +"%T %Z"`
 pstart=`env TZ=PST8PDT date -j -f "%s" $startbacktime +"%T %Z"`
